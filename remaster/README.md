@@ -6,10 +6,11 @@ O material original pertence à Rede Vanguarda; aqui é só preservação de mem
 
 ## Fonte
 - `Vinhetas_da_Rede_Vanguarda_-_2004480P.mp4`: 640x480, 29,97 qps, H.264 ~650 kbps, 3min15s.
-- Já vem progressivo (quase nenhum quadro entrelaçado), com borda preta de ~4 px nas laterais.
+- Já vem progressivo (quase nenhum quadro entrelaçado), com borda escura de apagamento analógico nas laterais.
 
 ## O que foi feito
-1. **Corte da borda preta** (`crop=632:474:4:3`), mantendo a proporção 4:3.
+1. **Corte da borda escura da gravação analógica** (`crop=620:466:13:6`: ~12 px à esquerda,
+   ~6 px à direita, 2-3 linhas em cima e embaixo), mantendo praticamente 4:3.
 2. **Ampliação 4x com IA**: modelo Real-ESRGAN `realesr-animevideov3` (SRVGGNetCompact),
    rodando em CPU via ONNX Runtime. Ele limpa os blocos de compressão e o borrado
    sem serrilhar as letras. O `realesr-general-x4v3` também foi testado e foi descartado

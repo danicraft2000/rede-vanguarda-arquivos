@@ -5,8 +5,8 @@ import sys, os, subprocess, time, numpy as np, onnxruntime as ort
 
 model, src, outdir = sys.argv[1:4]
 CH = int(sys.argv[4]) if len(sys.argv) > 4 else 300
-CROP = 'crop=632:474:4:3'           # remove a borda preta lateral, mantendo 4:3
-W, H, S = 632, 474, 4
+CROP = 'crop=620:466:13:6'          # remove a borda escura analógica (12px esq., 6px dir., 2-3 linhas cima/baixo)
+W, H, S = 620, 466, 4
 OUT_W, OUT_H = 1440, 1080
 os.makedirs(outdir, exist_ok=True)
 
@@ -24,8 +24,8 @@ for c in range(nchunks):
         continue
     a, b = c * CH, min(nb, (c + 1) * CH)
     dec = subprocess.Popen(['ffmpeg', '-v', 'error', '-i', src, '-an', '-vf',
-        f'trim=start_frame={a}:end_frame={b},setpts=PTS-STARTPTS,{CROP},'
-        'scale=in_color_matrix=bt709:in_range=tv,format=rgb24',
+        f'trim=start_frame={a}:end_frame={b},setpts=PTS-STARTPTS,'
+        f'scale=in_color_matrix=bt709:in_range=tv,format=rgb24,{CROP}',
         '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], stdout=subprocess.PIPE)
     tmp = final + '.part.mkv'
     enc = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24',

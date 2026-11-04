@@ -10,7 +10,7 @@ ffmpeg -v error -y -f concat -safe 0 -i "$LIST" -t "$DUR" -i "$SRC" -map 0:v -ma
   -af "volume=5dB" -c:a aac -b:a 192k -shortest -movflags +faststart "$OUT"
 # comparacao em tela dividida: esquerda = original (ampliado simples), direita = remasterizado
 ffmpeg -v error -y -t "$DUR" -i "$SRC" -i "$OUT" -filter_complex "
- [0:v]crop=632:474:4:3,scale=1440:1080:flags=bicubic,crop=720:1080:0:0,
+ [0:v]format=rgb24,crop=620:466:13:6,scale=1440:1080:flags=bicubic,crop=720:1080:0:0,
    drawtext=text='ANTES (original 480p)':fontcolor=white:fontsize=36:x=24:y=24:box=1:boxcolor=black@0.6:boxborderw=10[a];
  [1:v]crop=720:1080:720:0,
    drawtext=text='DEPOIS (remaster IA 1080p)':fontcolor=white:fontsize=36:x=w-tw-24:y=24:box=1:boxcolor=black@0.6:boxborderw=10[b];
