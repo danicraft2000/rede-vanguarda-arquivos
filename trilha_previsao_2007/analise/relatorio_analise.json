@@ -1,0 +1,827 @@
+{
+  "arquivo": "INPUT/trilhaPrevisao_2007.mp3",
+  "sha256": "759c7e5ed2cbae18591dce5c6fdcc6d08423d14b2042e340bf08dedb94270d80",
+  "tamanho_bytes": 986949,
+  "formato": {
+    "codec": "mp3",
+    "bitrate_declarado_kbps": 136.2,
+    "bitrate_stream_kbps": 136.1,
+    "sample_rate_hz": 44100,
+    "canais": 2,
+    "layout": "stereo",
+    "duracao_ffprobe_s": 57.991837,
+    "duracao_decodificada_s": 57.957007,
+    "amostras_decodificadas": 2555904,
+    "encoder": "Lavc60.3.",
+    "container_de_origem": "M4A ",
+    "quadros_mp3": {
+      "quadros_audio": 2220,
+      "histograma_kbps": {
+        "32": 1,
+        "80": 2,
+        "96": 47,
+        "112": 408,
+        "128": 1019,
+        "160": 655,
+        "192": 84,
+        "224": 4
+      },
+      "bitrate_medio_quadros_kbps": 136.3,
+      "tipo": "VBR",
+      "modos": {
+        "joint_stereo": 2220
+      },
+      "cabecalho": {
+        "Xing": true,
+        "Info": false,
+        "encoder": "Lavc (FFmpeg/LAME)"
+      }
+    },
+    "cadeia_provavel": "VHS (2007) -> digitalização -> app InShot (exportou AAC/M4A, 'major_brand M4A') -> MP3 VBR via FFmpeg/LAME: no mínimo 2 gerações de codec com perdas"
+  },
+  "canais": {
+    "correlacao_L_R": 0.9999975,
+    "rms_L_dbfs": -27.31,
+    "rms_R_dbfs": -27.31,
+    "rms_lateral_S_dbfs": -86.26,
+    "lateral_abaixo_do_mid_db": 59.0,
+    "conclusao": "mono duplicado (dual-mono): L e R praticamente idênticos; a diferença L-R é resíduo do joint-stereo do MP3. Processar o sinal mid e gravá-lo igual nos 2 canais mantém a gravação mono, sem estéreo artificial"
+  },
+  "niveis": {
+    "duracao_s": 57.957007,
+    "amostras": 2555904,
+    "pico_dbfs": -11.06,
+    "rms_dbfs": -27.31,
+    "fator_crista_db": 16.25,
+    "quadros_p10_dbfs": -45.69,
+    "quadros_p95_dbfs": -21.82,
+    "faixa_dinamica_p95_p10_db": 23.87,
+    "bandas_oitava_db": {
+      "20-45": -54.6,
+      "45-90": -48.3,
+      "90-180": -40.7,
+      "180-355": -33.7,
+      "355-710": -34.0,
+      "710-1400": -31.3,
+      "1400-2800": -37.5,
+      "2800-5600": -52.7,
+      "5600-11200": -71.7,
+      "11200-22050": -106.6
+    },
+    "lufs_integrado": -23.3,
+    "lra_lu": 16.0,
+    "true_peak_dbtp": -11.1,
+    "dc_offset": 1.05e-05
+  },
+  "inicio_musica_s": 3.776,
+  "pulsos_trecho_inicial": {
+    "n_pulsos": 23,
+    "tempos_s": [
+      0.017,
+      0.12,
+      0.222,
+      0.324,
+      0.631,
+      0.937,
+      1.039,
+      1.142,
+      1.245,
+      1.343,
+      1.547,
+      1.86,
+      1.961,
+      2.166,
+      2.37,
+      2.78,
+      3.087,
+      3.19,
+      3.293,
+      3.395,
+      3.497,
+      3.596,
+      3.69
+    ],
+    "grade_s": 0.1023,
+    "intervalos_em_multiplos_da_grade": [
+      1.01,
+      0.99,
+      1.0,
+      3.0,
+      2.99,
+      1.0,
+      1.0,
+      1.0,
+      0.96,
+      2.0,
+      3.05,
+      0.99,
+      2.01,
+      2.0,
+      4.01,
+      3.01,
+      1.0,
+      1.0,
+      1.0,
+      1.01,
+      0.97,
+      0.92
+    ],
+    "pico_dbfs": -31.0,
+    "centroide_espectral_hz": 58.9,
+    "rms_entre_pulsos_dbfs": -57.4,
+    "interpretacao": "pulsos graves e suaves (~8 ms, energia < 150 Hz) numa grade de ~102 ms, com batidas omitidas em múltiplos inteiros da grade e em fase com a entrada da música (o início da música cai exatamente na grade): padrão rítmico ligado ao arranjo, não um defeito mecânico periódico. Não são removidos; só a parte subsônica (<25 Hz) é atenuada pelo passa-altas (ver graves_subsonicos)"
+  },
+  "clipping": {
+    "pico_amostra": 0.28,
+    "pico_dbfs": -11.06,
+    "amostras_em_fundo_de_escala": 0,
+    "plateaus_4_amostras_perto_do_pico": 0,
+    "razao_histograma_topo": 0.371,
+    "clipping_confirmado": false,
+    "conclusao": "sem clipping: pico 11 dB abaixo do fundo de escala, sem platôs e sem acúmulo de amostras no topo do histograma (adeclip não se justifica)"
+  },
+  "ruido": {
+    "nota_snr_por_oitava": "diferença entre a potência média e o percentil 10 de cada bin durante a música (estimativa)",
+    "rms_trecho_inicial_entre_pulsos_dbfs": -57.4,
+    "quadros_musica_p10_dbfs": -41.2,
+    "quadros_musica_min_dbfs": -59.9,
+    "espectro_ruido_inicial_por_oitava_db": {
+      "20-45": -60.5,
+      "45-90": -65.6,
+      "90-180": -72.1,
+      "180-355": -80.4,
+      "355-710": -85.0,
+      "710-1400": -85.6,
+      "1400-2800": -94.7,
+      "2800-5600": -100.2,
+      "5600-11200": -95.5,
+      "11200-22050": -104.4
+    },
+    "planura_espectral_ruido_100_10k": 0.011,
+    "snr_por_oitava_media_vs_piso_db": {
+      "20-45": 17.6,
+      "45-90": 19.2,
+      "90-180": 21.6,
+      "180-355": 26.9,
+      "355-710": 33.6,
+      "710-1400": 31.3,
+      "1400-2800": 36.3,
+      "2800-5600": 49.4,
+      "5600-11200": 44.9,
+      "11200-22050": 31.8
+    },
+    "carater": "ruído de fundo muito baixo e concentrado nos graves; chiado (hiss) de fita praticamente ausente no trecho sem música (>5,6 kHz em -96 dB): os codecs com perdas (AAC/MP3) eliminaram o chiado fraco junto com os agudos fracos"
+  },
+  "chiado_agudos": {
+    "quadros_com_banda_aberta_pct": 48.5,
+    "nivel_6k5_10k_banda_aberta_db_hz": -107.0,
+    "planura_espectral_6k5_10k_banda_aberta": 0.161,
+    "nivel_6k5_10k_banda_aberta_percentis_db_hz": {
+      "25": -112.0,
+      "50": -107.0,
+      "75": -106.2,
+      "90": -105.5
+    },
+    "corr_nivel_agudos_x_medios": 0.59,
+    "interpretacao": "acima de ~6,5 kHz o nível é quase constante entre os quadros fortes (percentis 50 a 90 a ~1 dB um do outro), o que é típico de ruído estacionário (chiado de fita/transmissão). A planura moderada e a correlação parcial com os médios mostram que há também brilho de pratos misturado. O chiado só aparece quando o codec abre a banda (trechos fortes) e some quando o codec corta em 3-5 kHz: ele 'liga e desliga' com a música"
+  },
+  "graves_subsonicos": {
+    "linhas_pente_hz": [
+      9.8,
+      19.6,
+      29.3,
+      39.1,
+      48.9
+    ],
+    "nivel_linhas_musica_db_hz": [
+      -67.9,
+      -64.6,
+      -62.8,
+      -62.5,
+      -63.3
+    ],
+    "nivel_entre_linhas_musica_db_hz": [
+      -78.2,
+      -76.7,
+      -77.7,
+      -74.8
+    ],
+    "autocorr_envelope_20_80hz_na_grade": {
+      "trecho_inicial": 0.66,
+      "trecho_quieto_13_19s": 0.48,
+      "musica": 0.55
+    },
+    "desvio_inicio_musica_da_grade": -0.06,
+    "excesso_2007_sobre_referencia_db": {
+      "5-25": 19.5,
+      "25-40": 11.2,
+      "40-60": 4.0,
+      "60-100": 0.8
+    },
+    "conclusao": "a grade de ~102 ms existe também na referência (é o ritmo da música), mas a cópia 2007 tem energia subsônica bem maior que a referência abaixo de 25 Hz (ver excesso). Abaixo de 25 Hz não há nota musical do arranjo: passa-altas suave em 20-25 Hz é correção justificada; acima disso os pulsos se misturam ao baixo e não são separáveis sem risco"
+  },
+  "snr_estimada": {
+    "sinal_quadros_p95_dbfs": -21.8,
+    "sinal_quadros_mediana_dbfs": -31.1,
+    "ruido_referencia_dbfs": -57.4,
+    "snr_pico_musica_db": 35.6,
+    "snr_mediana_musica_db": 26.3,
+    "observacao": "ruído medido no trecho inicial sem música (fora dos pulsos). Como os codecs removem ruído fraco quando não há música, a SNR real da fita era menor; o ruído que sobra durante a música é mascarado e modulado pelo codec"
+  },
+  "zumbido": {
+    "musica": {
+      "50": [
+        {
+          "harmonico": 1,
+          "freq_hz": 50.0,
+          "pico_db": -61.1,
+          "proeminencia_db": 11.0,
+          "persistencia": 0.21,
+          "desvio_nivel_db": 4.6,
+          "corr_com_envelope_musica": 0.71
+        },
+        {
+          "harmonico": 2,
+          "freq_hz": 100.0,
+          "pico_db": -66.6,
+          "proeminencia_db": 0.9,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 6.3,
+          "corr_com_envelope_musica": 0.46
+        },
+        {
+          "harmonico": 3,
+          "freq_hz": 150.0,
+          "pico_db": -70.2,
+          "proeminencia_db": -5.6,
+          "persistencia": 0.04,
+          "desvio_nivel_db": 6.3,
+          "corr_com_envelope_musica": 0.65
+        },
+        {
+          "harmonico": 4,
+          "freq_hz": 200.0,
+          "pico_db": -67.0,
+          "proeminencia_db": -4.2,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 7.3,
+          "corr_com_envelope_musica": 0.6
+        },
+        {
+          "harmonico": 5,
+          "freq_hz": 250.0,
+          "pico_db": -53.6,
+          "proeminencia_db": 9.2,
+          "persistencia": 0.34,
+          "desvio_nivel_db": 8.9,
+          "corr_com_envelope_musica": 0.59
+        },
+        {
+          "harmonico": 6,
+          "freq_hz": 300.0,
+          "pico_db": -69.1,
+          "proeminencia_db": -4.1,
+          "persistencia": 0.07,
+          "desvio_nivel_db": 7.2,
+          "corr_com_envelope_musica": 0.71
+        },
+        {
+          "harmonico": 7,
+          "freq_hz": 350.0,
+          "pico_db": -72.8,
+          "proeminencia_db": -1.6,
+          "persistencia": 0.01,
+          "desvio_nivel_db": 8.0,
+          "corr_com_envelope_musica": 0.88
+        },
+        {
+          "harmonico": 8,
+          "freq_hz": 400.0,
+          "pico_db": -71.1,
+          "proeminencia_db": 0.3,
+          "persistencia": 0.01,
+          "desvio_nivel_db": 9.4,
+          "corr_com_envelope_musica": 0.85
+        }
+      ],
+      "59.94": [
+        {
+          "harmonico": 1,
+          "freq_hz": 59.94,
+          "pico_db": -65.3,
+          "proeminencia_db": 7.7,
+          "persistencia": 0.34,
+          "desvio_nivel_db": 5.7,
+          "corr_com_envelope_musica": 0.72
+        },
+        {
+          "harmonico": 2,
+          "freq_hz": 119.88,
+          "pico_db": -62.1,
+          "proeminencia_db": 7.1,
+          "persistencia": 0.59,
+          "desvio_nivel_db": 4.7,
+          "corr_com_envelope_musica": 0.63
+        },
+        {
+          "harmonico": 3,
+          "freq_hz": 179.82,
+          "pico_db": -62.8,
+          "proeminencia_db": -0.3,
+          "persistencia": 0.21,
+          "desvio_nivel_db": 6.5,
+          "corr_com_envelope_musica": 0.69
+        },
+        {
+          "harmonico": 4,
+          "freq_hz": 239.76,
+          "pico_db": -62.1,
+          "proeminencia_db": -2.9,
+          "persistencia": 0.04,
+          "desvio_nivel_db": 8.1,
+          "corr_com_envelope_musica": 0.65
+        },
+        {
+          "harmonico": 5,
+          "freq_hz": 299.7,
+          "pico_db": -68.9,
+          "proeminencia_db": -3.3,
+          "persistencia": 0.07,
+          "desvio_nivel_db": 7.2,
+          "corr_com_envelope_musica": 0.71
+        },
+        {
+          "harmonico": 6,
+          "freq_hz": 359.64,
+          "pico_db": -69.4,
+          "proeminencia_db": -1.4,
+          "persistencia": 0.04,
+          "desvio_nivel_db": 8.5,
+          "corr_com_envelope_musica": 0.84
+        },
+        {
+          "harmonico": 7,
+          "freq_hz": 419.58,
+          "pico_db": -62.8,
+          "proeminencia_db": 5.9,
+          "persistencia": 0.18,
+          "desvio_nivel_db": 10.9,
+          "corr_com_envelope_musica": 0.62
+        },
+        {
+          "harmonico": 8,
+          "freq_hz": 479.52,
+          "pico_db": -70.9,
+          "proeminencia_db": -8.4,
+          "persistencia": 0.01,
+          "desvio_nivel_db": 8.6,
+          "corr_com_envelope_musica": 0.87
+        }
+      ],
+      "60": [
+        {
+          "harmonico": 1,
+          "freq_hz": 60.0,
+          "pico_db": -65.3,
+          "proeminencia_db": 7.7,
+          "persistencia": 0.34,
+          "desvio_nivel_db": 5.7,
+          "corr_com_envelope_musica": 0.72
+        },
+        {
+          "harmonico": 2,
+          "freq_hz": 120.0,
+          "pico_db": -62.1,
+          "proeminencia_db": 7.1,
+          "persistencia": 0.59,
+          "desvio_nivel_db": 4.7,
+          "corr_com_envelope_musica": 0.63
+        },
+        {
+          "harmonico": 3,
+          "freq_hz": 180.0,
+          "pico_db": -62.8,
+          "proeminencia_db": -0.3,
+          "persistencia": 0.21,
+          "desvio_nivel_db": 6.5,
+          "corr_com_envelope_musica": 0.69
+        },
+        {
+          "harmonico": 4,
+          "freq_hz": 240.0,
+          "pico_db": -61.3,
+          "proeminencia_db": -2.1,
+          "persistencia": 0.04,
+          "desvio_nivel_db": 8.1,
+          "corr_com_envelope_musica": 0.65
+        },
+        {
+          "harmonico": 5,
+          "freq_hz": 300.0,
+          "pico_db": -69.1,
+          "proeminencia_db": -4.1,
+          "persistencia": 0.07,
+          "desvio_nivel_db": 7.2,
+          "corr_com_envelope_musica": 0.71
+        },
+        {
+          "harmonico": 6,
+          "freq_hz": 360.0,
+          "pico_db": -67.3,
+          "proeminencia_db": 0.7,
+          "persistencia": 0.08,
+          "desvio_nivel_db": 8.3,
+          "corr_com_envelope_musica": 0.84
+        },
+        {
+          "harmonico": 7,
+          "freq_hz": 420.0,
+          "pico_db": -62.8,
+          "proeminencia_db": 5.9,
+          "persistencia": 0.18,
+          "desvio_nivel_db": 11.0,
+          "corr_com_envelope_musica": 0.64
+        },
+        {
+          "harmonico": 8,
+          "freq_hz": 480.0,
+          "pico_db": -70.9,
+          "proeminencia_db": -8.4,
+          "persistencia": 0.03,
+          "desvio_nivel_db": 8.8,
+          "corr_com_envelope_musica": 0.85
+        }
+      ]
+    },
+    "trecho_inicial": {
+      "50": [
+        {
+          "harmonico": 1,
+          "freq_hz": 50.0,
+          "pico_db": -66.7,
+          "proeminencia_db": 8.7,
+          "persistencia": 0.17,
+          "desvio_nivel_db": 2.3,
+          "corr_com_envelope_musica": 0.85
+        },
+        {
+          "harmonico": 2,
+          "freq_hz": 100.0,
+          "pico_db": -71.6,
+          "proeminencia_db": 6.4,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 2.2,
+          "corr_com_envelope_musica": -0.42
+        },
+        {
+          "harmonico": 3,
+          "freq_hz": 150.0,
+          "pico_db": -80.3,
+          "proeminencia_db": 2.1,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 2.2,
+          "corr_com_envelope_musica": -0.37
+        },
+        {
+          "harmonico": 4,
+          "freq_hz": 200.0,
+          "pico_db": -87.9,
+          "proeminencia_db": -0.8,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 3.9,
+          "corr_com_envelope_musica": -0.16
+        },
+        {
+          "harmonico": 5,
+          "freq_hz": 250.0,
+          "pico_db": -92.1,
+          "proeminencia_db": -1.5,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 4.6,
+          "corr_com_envelope_musica": -0.41
+        },
+        {
+          "harmonico": 6,
+          "freq_hz": 300.0,
+          "pico_db": -94.5,
+          "proeminencia_db": -0.9,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 3.8,
+          "corr_com_envelope_musica": -0.45
+        },
+        {
+          "harmonico": 7,
+          "freq_hz": 350.0,
+          "pico_db": -98.0,
+          "proeminencia_db": 2.3,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 6.7,
+          "corr_com_envelope_musica": -0.29
+        },
+        {
+          "harmonico": 8,
+          "freq_hz": 400.0,
+          "pico_db": -109.3,
+          "proeminencia_db": 2.8,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 3.5,
+          "corr_com_envelope_musica": -0.38
+        }
+      ],
+      "59.94": [
+        {
+          "harmonico": 1,
+          "freq_hz": 59.94,
+          "pico_db": -67.2,
+          "proeminencia_db": 8.5,
+          "persistencia": 0.17,
+          "desvio_nivel_db": 2.1,
+          "corr_com_envelope_musica": 0.63
+        },
+        {
+          "harmonico": 2,
+          "freq_hz": 119.88,
+          "pico_db": -75.5,
+          "proeminencia_db": 4.1,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 2.2,
+          "corr_com_envelope_musica": -0.63
+        },
+        {
+          "harmonico": 3,
+          "freq_hz": 179.82,
+          "pico_db": -86.0,
+          "proeminencia_db": -1.2,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 3.4,
+          "corr_com_envelope_musica": -0.21
+        },
+        {
+          "harmonico": 4,
+          "freq_hz": 239.76,
+          "pico_db": -91.4,
+          "proeminencia_db": -1.7,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 6.8,
+          "corr_com_envelope_musica": -0.42
+        },
+        {
+          "harmonico": 5,
+          "freq_hz": 299.7,
+          "pico_db": -94.5,
+          "proeminencia_db": -0.9,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 3.8,
+          "corr_com_envelope_musica": -0.45
+        },
+        {
+          "harmonico": 6,
+          "freq_hz": 359.64,
+          "pico_db": -100.3,
+          "proeminencia_db": 1.6,
+          "persistencia": 0.17,
+          "desvio_nivel_db": 2.9,
+          "corr_com_envelope_musica": -0.26
+        },
+        {
+          "harmonico": 7,
+          "freq_hz": 419.58,
+          "pico_db": -117.2,
+          "proeminencia_db": 1.5,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 2.9,
+          "corr_com_envelope_musica": 0.23
+        },
+        {
+          "harmonico": 8,
+          "freq_hz": 479.52,
+          "pico_db": -112.4,
+          "proeminencia_db": 3.4,
+          "persistencia": 0.17,
+          "desvio_nivel_db": 2.1,
+          "corr_com_envelope_musica": -0.34
+        }
+      ],
+      "60": [
+        {
+          "harmonico": 1,
+          "freq_hz": 60.0,
+          "pico_db": -67.2,
+          "proeminencia_db": 8.5,
+          "persistencia": 0.17,
+          "desvio_nivel_db": 2.1,
+          "corr_com_envelope_musica": 0.63
+        },
+        {
+          "harmonico": 2,
+          "freq_hz": 120.0,
+          "pico_db": -75.5,
+          "proeminencia_db": 4.1,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 2.2,
+          "corr_com_envelope_musica": -0.63
+        },
+        {
+          "harmonico": 3,
+          "freq_hz": 180.0,
+          "pico_db": -86.0,
+          "proeminencia_db": -1.2,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 3.4,
+          "corr_com_envelope_musica": -0.21
+        },
+        {
+          "harmonico": 4,
+          "freq_hz": 240.0,
+          "pico_db": -91.4,
+          "proeminencia_db": -1.7,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 6.8,
+          "corr_com_envelope_musica": -0.42
+        },
+        {
+          "harmonico": 5,
+          "freq_hz": 300.0,
+          "pico_db": -94.5,
+          "proeminencia_db": -0.9,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 3.8,
+          "corr_com_envelope_musica": -0.45
+        },
+        {
+          "harmonico": 6,
+          "freq_hz": 360.0,
+          "pico_db": -100.3,
+          "proeminencia_db": 1.6,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 3.9,
+          "corr_com_envelope_musica": 0.01
+        },
+        {
+          "harmonico": 7,
+          "freq_hz": 420.0,
+          "pico_db": -117.2,
+          "proeminencia_db": 1.5,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 3.8,
+          "corr_com_envelope_musica": 0.4
+        },
+        {
+          "harmonico": 8,
+          "freq_hz": 480.0,
+          "pico_db": -113.9,
+          "proeminencia_db": 1.2,
+          "persistencia": 0.0,
+          "desvio_nivel_db": 2.7,
+          "corr_com_envelope_musica": -0.44
+        }
+      ]
+    },
+    "componentes_detectados": [],
+    "candidatos_rejeitados": [
+      {
+        "familia": "50",
+        "harmonico": 5,
+        "freq_hz": 250.0,
+        "pico_db": -53.6,
+        "proeminencia_db": 9.2,
+        "persistencia": 0.34,
+        "desvio_nivel_db": 8.9,
+        "corr_com_envelope_musica": 0.59
+      },
+      {
+        "familia": "59.94",
+        "harmonico": 1,
+        "freq_hz": 59.94,
+        "pico_db": -65.3,
+        "proeminencia_db": 7.7,
+        "persistencia": 0.34,
+        "desvio_nivel_db": 5.7,
+        "corr_com_envelope_musica": 0.72
+      },
+      {
+        "familia": "59.94",
+        "harmonico": 2,
+        "freq_hz": 119.88,
+        "pico_db": -62.1,
+        "proeminencia_db": 7.1,
+        "persistencia": 0.59,
+        "desvio_nivel_db": 4.7,
+        "corr_com_envelope_musica": 0.63
+      },
+      {
+        "familia": "60",
+        "harmonico": 1,
+        "freq_hz": 60.0,
+        "pico_db": -65.3,
+        "proeminencia_db": 7.7,
+        "persistencia": 0.34,
+        "desvio_nivel_db": 5.7,
+        "corr_com_envelope_musica": 0.72
+      },
+      {
+        "familia": "60",
+        "harmonico": 2,
+        "freq_hz": 120.0,
+        "pico_db": -62.1,
+        "proeminencia_db": 7.1,
+        "persistencia": 0.59,
+        "desvio_nivel_db": 4.7,
+        "corr_com_envelope_musica": 0.63
+      }
+    ],
+    "criterio": "zumbido = proeminência >= 6 dB sobre o fundo local (±3-15 Hz), presente em >= 60% das janelas de 1,5 s, nível estável (desvio <= 4 dB) e sem acompanhar o envelope da música (corr < 0,5)",
+    "conclusao": "nenhum zumbido de rede (50/60 Hz) confirmado. As linhas em 60/120 Hz variam junto com a música (desvio de nível alto e correlação com o envelope) e somem no trecho sem música: são graves do arranjo, não interferência elétrica. Notch não se justifica"
+  },
+  "estalos": {
+    "interpretacao": "os candidatos são a entrada abrupta da música (~3.78 s, transiente legítimo/edição) e o início de um pulso grave do trecho inicial: nenhum estalo real de fita. adeclick não é necessário",
+    "metodo": "resíduo de predição linear (LPC ordem 24, blocos de 46 ms) > 9 desvios robustos",
+    "eventos_total": 2,
+    "eventos_trecho_inicial": 1,
+    "eventos_na_musica": 1,
+    "por_minuto_na_musica": 1.1,
+    "lista": [
+      {
+        "inicio_s": 0.2198,
+        "dur_ms": 0.27,
+        "pico_desvios": 11.4
+      },
+      {
+        "inicio_s": 3.7889,
+        "dur_ms": 7.55,
+        "pico_desvios": 29.7
+      }
+    ]
+  },
+  "distorcao": {
+    "fator_crista_db": 16.25,
+    "clipping": "sem clipping: pico 11 dB abaixo do fundo de escala, sem platôs e sem acúmulo de amostras no topo do histograma (adeclip não se justifica)",
+    "observacao": "sem referência limpa não existe medida direta de THD em música. Indicadores: sem platôs/cortes, fator de crista normal para música, e espectro sem 'spray' de harmônicos acima da banda útil. A degradação dominante é de codec (banda limitada, buracos espectrais, pré-eco), não saturação analógica"
+  },
+  "resposta_em_frequencia": {
+    "ltas_por_oitava_db": {
+      "20-45": -54.5,
+      "45-90": -48.1,
+      "90-180": -40.4,
+      "180-355": -33.4,
+      "355-710": -33.7,
+      "710-1400": -31.1,
+      "1400-2800": -37.2,
+      "2800-5600": -52.4,
+      "5600-11200": -71.5,
+      "11200-22050": -106.6
+    },
+    "queda_rel_300_1k_db": {
+      "40": -3.1,
+      "63": -0.0,
+      "100": 1.5,
+      "2000": -16.3,
+      "3000": -23.2,
+      "4000": -28.9,
+      "6000": -41.3,
+      "8000": -47.2,
+      "10000": -47.9,
+      "12000": -75.7
+    },
+    "freq_queda_20db_hz": 3746.77734375,
+    "freq_queda_40db_hz": 6686.0595703125,
+    "corte_superior_maximo_hz": 10347.0,
+    "corte_por_quadro_percentis_hz": {
+      "10": 3187.0,
+      "50": 7063.0,
+      "90": 10347.0,
+      "99": 10465.0
+    },
+    "largura_de_banda_por_quadro_pct": {
+      "<5 kHz": 38.1,
+      "5-9 kHz": 13.4,
+      ">=9 kHz": 48.5
+    },
+    "conclusao": "agudos muito atenuados (-20 dB já em ~3747 Hz em relação a 300-1000 Hz) e corte abrupto em ~10.3 kHz típico de codec; em muitos quadros o codec descartou tudo acima de 5 kHz. Acima do corte não há informação: nada a recuperar (sem upsampling, sem 'excitação' de agudos)"
+  },
+  "referencia_2004_2005": {
+    "arquivo": "referencia_vinheta_2004-2005.mp3",
+    "canais": 2,
+    "canal_com_audio": "L",
+    "rms_outro_canal_dbfs": -117.4,
+    "duracao_s": 12.701,
+    "mesma_musica_score_croma": 0.915,
+    "desvio_semitons": 0,
+    "posicao_na_trilha_2007_s": 4.04,
+    "afinacao_2007_semitom": 0.02,
+    "afinacao_ref_semitom": 0.03,
+    "diferenca_espectral_2007_menos_ref_db_por_oitava": {
+      "20-45": 7.6,
+      "45-90": 2.9,
+      "90-180": -0.9,
+      "180-355": 1.3,
+      "355-710": -0.7,
+      "710-1400": 0.7,
+      "1400-2800": -0.7,
+      "2800-5600": 4.8,
+      "5600-11200": -2.4,
+      "11200-22050": -33.4
+    },
+    "conclusao": "mesma composição, mesma tonalidade (afinações iguais em ±0,05 semitom): não há erro de velocidade a corrigir. Em relação à referência (normalizada em 355-1400 Hz), a cópia 2007 perde agudos acima de 5,6 kHz e não tem nada acima de ~10,5 kHz. A referência só tem áudio num canal e a correlação de forma de onda é baixa: serve como guia de equilíbrio tonal, não para mesclar sinais"
+  }
+}

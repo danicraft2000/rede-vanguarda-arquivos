@@ -1,0 +1,5 @@
+# áudio de cada teste individual (~130 MB): recriado por scripts/02_testes_filtros.py
+amostra_20s/testes_individuais/
+# cache entre as fases 3 e 4
+.cache_versoes_*.npz
+__pycache__/

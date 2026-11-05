@@ -1,0 +1,29 @@
+# Comparação (música inteira)
+
+| medida | Original | Conservador | Restauração | Avançado |
+|---|---|---|---|---|
+| duração (s) | 57.957007 | 57.957007 | 57.957007 | 57.957007 |
+| amostras | 2555904 | 2555904 | 2555904 | 2555904 |
+| pico (dBFS) | -11.06 | -11.09 | -11.1 | -11.09 |
+| true peak (dBTP) | -11.1 | -11.1 | -11.1 | -11.1 |
+| loudness (LUFS) | -23.3 | -23.3 | -23.3 | -23.3 |
+| LRA (LU) | 16.0 | 16.0 | 16.0 | 16.0 |
+| RMS (dBFS) | -27.31 | -27.31 | -27.31 | -27.31 |
+| fator de crista (dB) | 16.25 | 16.22 | 16.21 | 16.22 |
+| faixa dinâmica quadros p95-p10 (dB) | 23.87 | 24.12 | 24.11 | 24.14 |
+| chiado 6,5-10 kHz nos trechos fortes (dB/Hz) | -106.0 | -110.2 | -111.8 | -113.7 |
+| trecho inicial sem música, RMS (dBFS) | -51.08 | -52.1 | -52.52 | -52.99 |
+| subsônico 5-25 Hz, RMS (dBFS) | -58.85 | -66.35 | -72.78 | -78.53 |
+| removido, RMS (dBFS) | — | -60.67 | -58.44 | -57.05 |
+| removido entre 60 Hz e 4,5 kHz (dBFS) | — | -103.2 | -95.1 | -87.7 |
+| atraso (amostras) | — | 0 | 0 | 0 |
+| correlação com o original | — | 0.99977 | 0.999615 | 0.99947 |
+| médios 200-4k nos trechos fortes (dB) | — | 0.0 | 0.0 | -0.0 |
+| graves 40-100 Hz (dB) | — | -0.0 | -0.01 | -0.05 |
+| trechos quietos 1-10k (dB) | — | -0.0 | -0.0 | -0.0 |
+| música/removido 100-4k (dB) | — | 113.4 | 111.0 | 75.9 |
+| ataques agudos preservados (corr.) | — | 0.997 | 0.994 | 0.98 |
+| harmônicos 4,6-6 kHz, média / pior (dB) | — | -0.0 / -0.0 | -0.0 / -0.0 | -0.76 / -1.22 |
+| harmônicos 6-7,6 kHz, média / pior (dB) | — | None / None | None / None | None / None |
+| flutuação do chiado (dB; orig. 1.56) | — | 1.86 | 2.23 | 2.43 |
+

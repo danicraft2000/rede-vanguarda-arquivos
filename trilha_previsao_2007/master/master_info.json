@@ -1,0 +1,115 @@
+{
+  "preset": "restauracao",
+  "parametros": {
+    "nome": "PRESET 2 - RESTAURAÇÃO",
+    "objetivo": "equilíbrio: chiado acima de 6 kHz reduzido, harmônicos de 4,6-6 kHz intocados",
+    "passa_altas_hz": 25,
+    "passa_altas_ordem": 4,
+    "corte_agudos_hz": 6000,
+    "afftdn": "afftdn=nr=10:nf=-60:tn=1"
+  },
+  "original": {
+    "arquivo": "INPUT/trilhaPrevisao_2007.mp3",
+    "sha256": "759c7e5ed2cbae18591dce5c6fdcc6d08423d14b2042e340bf08dedb94270d80",
+    "medidas": {
+      "duracao_s": 57.957007,
+      "amostras": 2555904,
+      "pico_dbfs": -11.06,
+      "rms_dbfs": -27.31,
+      "fator_crista_db": 16.25,
+      "quadros_p10_dbfs": -45.69,
+      "quadros_p95_dbfs": -21.82,
+      "faixa_dinamica_p95_p10_db": 23.87,
+      "bandas_oitava_db": {
+        "20-45": -54.6,
+        "45-90": -48.3,
+        "90-180": -40.7,
+        "180-355": -33.7,
+        "355-710": -34.0,
+        "710-1400": -31.3,
+        "1400-2800": -37.5,
+        "2800-5600": -52.7,
+        "5600-11200": -71.7,
+        "11200-22050": -106.6
+      },
+      "lufs_integrado": -23.3,
+      "lra_lu": 16.0,
+      "true_peak_dbtp": -11.1
+    }
+  },
+  "wav": {
+    "arquivo": "master/trilhaPrevisao_2007_restaurada.wav",
+    "codec": "pcm_s24le",
+    "bits": 24,
+    "sample_rate": 44100,
+    "canais": 2,
+    "amostras": 2555904,
+    "duracao_s": 57.957007,
+    "L_igual_R": true,
+    "erro_quantizacao_24bit_max": 1.1897644409952779e-07,
+    "medidas": {
+      "duracao_s": 57.957007,
+      "amostras": 2555904,
+      "pico_dbfs": -11.1,
+      "rms_dbfs": -27.31,
+      "fator_crista_db": 16.21,
+      "quadros_p10_dbfs": -45.94,
+      "quadros_p95_dbfs": -21.82,
+      "faixa_dinamica_p95_p10_db": 24.11,
+      "bandas_oitava_db": {
+        "20-45": -56.4,
+        "45-90": -48.3,
+        "90-180": -40.7,
+        "180-355": -33.7,
+        "355-710": -34.0,
+        "710-1400": -31.3,
+        "1400-2800": -37.5,
+        "2800-5600": -52.7,
+        "5600-11200": -74.1,
+        "11200-22050": -116.1
+      },
+      "lufs_integrado": -23.3,
+      "lra_lu": 16.0,
+      "true_peak_dbtp": -11.1
+    },
+    "sha256": "7ab5396130e2cdc0c526cce70f49f430280046c370f49b9fd69e347463f5f3fe"
+  },
+  "mp3": {
+    "arquivo": "master/trilhaPrevisao_2007_restaurada_320k.mp3",
+    "bitrate_kbps": 320,
+    "sample_rate": 44100,
+    "canais": 2,
+    "amostras_decodificadas": 2555904,
+    "duracao_decodificada_s": 57.957007,
+    "atraso_vs_wav_amostras": 0,
+    "diferenca_vs_wav_rms_dbfs": -103.4,
+    "medidas": {
+      "duracao_s": 57.957007,
+      "amostras": 2555904,
+      "pico_dbfs": -11.1,
+      "rms_dbfs": -27.31,
+      "fator_crista_db": 16.21,
+      "quadros_p10_dbfs": -45.94,
+      "quadros_p95_dbfs": -21.82,
+      "faixa_dinamica_p95_p10_db": 24.11,
+      "bandas_oitava_db": {
+        "20-45": -56.4,
+        "45-90": -48.3,
+        "90-180": -40.7,
+        "180-355": -33.7,
+        "355-710": -34.0,
+        "710-1400": -31.3,
+        "1400-2800": -37.5,
+        "2800-5600": -52.7,
+        "5600-11200": -74.1,
+        "11200-22050": -115.7
+      },
+      "lufs_integrado": -23.3,
+      "lra_lu": 16.0,
+      "true_peak_dbtp": -11.1
+    },
+    "sha256": "5cabb3e5957ad1bb47aa243282ed36eaae6989a3bb29d22b7eb2e900562b3650"
+  },
+  "ganho_aplicado_db": 0.0,
+  "diferenca_loudness_vs_original_lu": 0.0
+}
