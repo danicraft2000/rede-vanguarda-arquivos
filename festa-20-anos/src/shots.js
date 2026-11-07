@@ -108,7 +108,8 @@ export function createTimeline(world) {
         drawBrand(ctx, L, W / 2, y, size, { align: 'center', fill: g });
         ctx.shadowColor = 'transparent';
         const sx = lerp(-400, W + 400, clamp((lt - 2.6) / 1.2)); const sh = ctx.createLinearGradient(sx - 120, 0, sx + 120, 0); sh.addColorStop(0, 'rgba(255,255,255,0)'); sh.addColorStop(0.5, 'rgba(255,255,255,0.7)'); sh.addColorStop(1, 'rgba(255,255,255,0)');
-        ctx.globalCompositeOperation = 'source-atop'; ctx.fillStyle = sh; ctx.fillRect(0, y - size, W, size + 20);
+        drawBrand(ctx, L, W / 2, y, size, { align: 'center', fill: null }); ctx.clip();   // brilho só dentro das letras
+        ctx.fillStyle = sh; ctx.fillRect(0, y - size, W, size + 20);
         ctx.restore();
         ctx.save(); ctx.globalAlpha = O.vis(lt, 2.7, 0.5); ctx.fillStyle = O.rbGrad(ctx, W / 2 - 420, 0, W / 2 + 420, 0); ctx.fillRect(W / 2 - 420 * easeOutExpo(clamp((lt - 2.7) / 0.6)), y + 26, 840 * easeOutExpo(clamp((lt - 2.7) / 0.6)), 7); ctx.restore();
       }
