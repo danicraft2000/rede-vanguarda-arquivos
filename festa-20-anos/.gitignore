@@ -1,0 +1,11 @@
+# dependências e saídas geradas
+node_modules/
+build/frames*/
+build/preview*/
+build/*.mp4
+build/*.m4a
+build/*.wav
+build/*.log
+build/perf.jpg
+# arquivos do usuário (fonte comercial, música, logos e fotos) — não versionar
+assets/

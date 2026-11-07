@@ -1,0 +1,46 @@
+<!doctype html><meta charset="utf-8"><body style="margin:0;background:#000">
+<canvas id="c" width="1280" height="720"></canvas>
+<script type="module">
+import opentype from '/node_modules/three/examples/jsm/libs/opentype.module.js';
+const font = opentype.parse(await (await fetch('/assets/ITCAvantGardeStd-Bold.ttf')).arrayBuffer());
+const img = new Image(); img.src = '/assets/banner_18anos.png'; await img.decode();
+const c = document.getElementById('c'), ctx = c.getContext('2d');
+ctx.drawImage(img, 0, 0);
+const W = 1280, H = 720;
+const id = ctx.getImageData(0, 0, W, H), d = id.data;
+const px = (x, y) => (y * W + x) * 4;
+const isDark = (x, y) => { const i = px(x, y); return d[i] + d[i + 1] + d[i + 2] < 200; };
+// 1) apaga "18 ANOS": máscara do texto escuro (dilatada 2 px) na área do painel direito
+const X0 = 844, X1 = 1086, Y0 = 376, Y1 = 430;
+const mask = new Uint8Array(W * H);
+for (let y = Y0; y <= Y1; y++) for (let x = X0; x <= X1; x++) {
+  const i = px(x, y), lum = (d[i] + d[i + 1] + d[i + 2]) / 3;
+  if (lum < 80) for (let dy = -2; dy <= 2; dy++) for (let dx = -2; dx <= 2; dx++) mask[(y + dy) * W + x + dx] = 1;
+}
+// cor de fundo de cada linha = mediana dos pixels limpos do painel (o painel varia só na vertical)
+for (let y = Y0 - 3; y <= Y1 + 3; y++) {
+  const rs = [], gs = [], bs = [];
+  for (let x = X0; x <= 1000; x++) { if (mask[y * W + x]) continue; const i = px(x, y); if (d[i] + d[i+1] + d[i+2] < 200 || d[i] > 140) continue; rs.push(d[i]); gs.push(d[i+1]); bs.push(d[i+2]); }
+  const med = (a) => a.sort((p, q) => p - q)[a.length >> 1];
+  const r = med(rs), g = med(gs), b = med(bs);
+  for (let x = X0; x <= X1; x++) if (mask[y * W + x]) { const i = px(x, y); d[i] = r; d[i+1] = g; d[i+2] = b; }
+}
+ctx.putImageData(id, 0, 0);
+// 2) escreve "20 ANOS" com a ITC Avant Garde Gothic Bold, usando o A alternativo (A.alt01) igual ao "DANIEL"
+const byName = (n) => { for (let i = 0; i < font.glyphs.length; i++) { const g = font.glyphs.get(i); if (g.name === n) return g; } };
+const glyphs = [...'20 ANOS'].map((ch) => ch === 'A' ? byName('A.alt01') : font.charToGlyph(ch));
+const capH = font.charToGlyph('N').getBoundingBox().y2;            // altura das maiúsculas em unidades
+const size = 41 / capH * font.unitsPerEm;                          // "18 ANOS" original: 41 px de altura
+const scale = size / font.unitsPerEm;
+let adv = 0; const pos = [];
+glyphs.forEach((g, k) => { pos.push(adv); adv += g.advanceWidth * scale; if (k < glyphs.length - 1) adv += font.getKerningValue(g, glyphs[k + 1]) * scale; });
+const last = glyphs.at(-1).getBoundingBox();
+let inkW = pos.at(-1) + last.x2 * scale - glyphs[0].getBoundingBox().x1 * scale;
+// mesma largura do "18 ANOS" original (850..1081 px): ajusta só o espaçamento entre letras
+const track = (1081 - 850 - inkW) / (glyphs.length - 1);
+pos.forEach((_, k) => { pos[k] += k * track; }); inkW += track * (glyphs.length - 1);
+const cx = (850 + 1081) / 2, x0 = cx - inkW / 2 - glyphs[0].getBoundingBox().x1 * scale, base = 422.5;
+ctx.fillStyle = '#000';
+glyphs.forEach((g, k) => { const p = g.getPath(x0 + pos[k], base, size); p.fill = '#000'; p.draw(ctx); });
+window.RESULT = { png: c.toDataURL('image/png'), size, inkW, x0 };
+</script>
