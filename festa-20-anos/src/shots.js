@@ -448,7 +448,7 @@ export function createTimeline(world) {
   add('resumo', T(60), T(62), {
     trans: 'flash', montage: true,
     pick: (lt) => { const i = Math.min(montage.length - 1, Math.floor(lt / BEAT)); const [word, sec, idx, u] = montage[i]; return { word, shot: bySec(sec, idx), u: u + (lt - i * BEAT) / BEAT * 0.06, i, blt: lt - i * BEAT }; },
-    draw: (lt) => { const m = S.find((s) => s.montage).pick(lt); O.bigWord(ctx, clamp(m.blt / 0.25), m.word, { size: m.word.length > 12 ? 120 : 160 }); O.flash(ctx, Math.exp(-m.blt * 9) * 0.55); },
+    draw: (lt) => { const m = S.find((s) => s.montage).pick(lt); O.bigWord(ctx, clamp(m.blt / 0.25), m.word, { size: m.word.length > 12 ? 120 : 160 }); O.flash(ctx, Math.exp(-m.blt * 12) * 0.35); },
   });
 
   // ===== 19. FINAL =====
