@@ -1,0 +1,18 @@
+{
+  "name": "daniel-20-anos-video",
+  "version": "1.0.0",
+  "description": "Vídeo de apresentação da festa Daniel 20 Anos (tema Rede Vanguarda)",
+  "scripts": {
+    "previa": "node tools/preview.mjs",
+    "render": "node tools/renderizar.mjs saida 3 600",
+    "progresso": "node tools/progresso.mjs saida/progresso 9018"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "type": "module",
+  "private": true
+}

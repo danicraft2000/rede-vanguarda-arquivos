@@ -1,0 +1,80 @@
+@font-face { font-family: 'AG'; src: url('/fontes/ITCAvantGardeStd-Bold.ttf') format('truetype'); font-weight: 700; }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+body { font-family: Inter, 'Helvetica Neue', Arial, sans-serif; color: #fff; -webkit-font-smoothing: antialiased; }
+#palco { position: absolute; inset: 0; overflow: hidden; transform-origin: 50% 50%; background: #000; }
+#gl { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+#ov, #hud, #tr { position: absolute; inset: 0; pointer-events: none; }
+.cena { position: absolute; inset: 0; display: none; perspective: 1400px; }
+.camada { position: absolute; inset: 0; transform-style: preserve-3d; }
+.ch { display: inline-block; white-space: pre; will-change: transform; }
+
+/* ---- tipografia ---- */
+.ag { font-family: 'AG', Inter, sans-serif; font-weight: 700; }
+.tit { font-family: 'AG', Inter, sans-serif; font-size: 132px; line-height: 1; letter-spacing: -1px; white-space: nowrap; transform-style: preserve-3d; text-shadow: 0 8px 30px rgba(0,0,20,0.55); }
+.tit-m { font-family: 'AG', Inter, sans-serif; font-size: 88px; line-height: 1.02; white-space: nowrap; transform-style: preserve-3d; text-shadow: 0 6px 24px rgba(0,0,20,0.55); }
+.tit-p { font-family: 'AG', Inter, sans-serif; font-size: 56px; line-height: 1.05; white-space: nowrap; transform-style: preserve-3d; text-shadow: 0 4px 18px rgba(0,0,20,0.6); }
+.cromo .ch { background: linear-gradient(180deg, #ffffff 0%, #f1f3f8 46%, #aab2c4 52%, #e9edf5 78%, #ffffff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; filter: drop-shadow(0 6px 14px rgba(0,0,30,0.6)); }
+.arco-txt .ch { background: linear-gradient(180deg, #7b3fe0, #3d6ff0, #27b3d6, #2fc27a, #9bd23a, #f2d33a, #f5a12e, #f26b2a, #e5342e, #d6247e); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; }
+.sub { font-size: 34px; font-weight: 500; color: #dfe4ff; letter-spacing: 0.2px; line-height: 1.35; text-shadow: 0 2px 12px rgba(0,0,20,0.7); }
+.sub b { color: #fff; font-weight: 800; }
+.mini { font-size: 22px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #c9d1ff; }
+
+/* ---- kicker ---- */
+.kicker { position: absolute; display: flex; align-items: center; gap: 18px; font-family: 'AG', Inter, sans-serif; font-size: 30px; letter-spacing: 6px; color: #fff; white-space: nowrap; }
+.kbar { display: inline-block; width: 90px; height: 10px; border-radius: 5px; background: linear-gradient(90deg, #7b3fe0, #3d6ff0, #27b3d6, #2fc27a, #9bd23a, #f2d33a, #f5a12e, #f26b2a, #e5342e, #d6247e); transform-origin: left center; box-shadow: 0 0 18px rgba(120,140,255,0.6); }
+.ktxt { display: inline-block; text-shadow: 0 2px 12px rgba(0,0,20,0.7); }
+
+/* ---- painel ---- */
+.painel { position: absolute; background: linear-gradient(160deg, rgba(20,24,78,0.92), rgba(6,8,34,0.92)); border: 1.5px solid rgba(255,255,255,0.16); border-radius: 22px; box-shadow: 0 30px 80px rgba(0,0,10,0.55), inset 0 1px 0 rgba(255,255,255,0.18); overflow: hidden; }
+.painel::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 8px; background: linear-gradient(90deg, #7b3fe0, #3d6ff0, #27b3d6, #2fc27a, #9bd23a, #f2d33a, #f5a12e, #f26b2a, #e5342e, #d6247e); }
+.painel.claro { background: linear-gradient(160deg, rgba(255,255,255,0.97), rgba(226,231,244,0.97)); color: #12163a; }
+.chip { display: inline-flex; align-items: center; gap: 12px; padding: 12px 22px; border-radius: 40px; background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.22); font-size: 27px; font-weight: 600; white-space: nowrap; }
+.chip i { display: inline-block; width: 14px; height: 14px; border-radius: 50%; }
+
+/* ---- fundo 2D ---- */
+.bg2d { position: absolute; inset: 0; overflow: hidden; }
+.bg-grad { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 38%, #26308f 0%, #11165a 42%, #05061c 100%); }
+.bg-roxo .bg-grad { background: radial-gradient(ellipse at 50% 38%, #4a2a9a 0%, #1d1460 45%, #07051c 100%); }
+.bg-noite .bg-grad { background: radial-gradient(ellipse at 50% 30%, #172456 0%, #0a0f30 50%, #020309 100%); }
+.bg-quente .bg-grad { background: radial-gradient(ellipse at 50% 38%, #8a3a1c 0%, #4a1a12 45%, #12060a 100%); }
+.bg-piso { position: absolute; left: -50%; right: -50%; bottom: -10%; height: 70%; perspective: 600px; perspective-origin: 50% 0%; }
+.bg-grade { position: absolute; inset: 0; transform: rotateX(72deg); transform-origin: 50% 0%; background-image: linear-gradient(rgba(140,160,255,0.22) 2px, transparent 2px), linear-gradient(90deg, rgba(140,160,255,0.22) 2px, transparent 2px); background-size: 120px 120px; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 40%); mask-image: linear-gradient(to bottom, transparent 0%, black 40%); }
+.bg-feixes { position: absolute; inset: 0; }
+.feixe { position: absolute; left: 0; top: 0; height: 26px; border-radius: 13px; filter: blur(10px); }
+.bg-parts { position: absolute; inset: 0; }
+.part { position: absolute; left: 0; top: 0; border-radius: 50%; box-shadow: 0 0 8px currentColor; }
+.bg-vinheta { position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,8,0.65) 100%); }
+
+/* ---- pinos de rótulo 3D ---- */
+.pino { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+.pino-ponto { position: absolute; left: 0; top: 0; width: 22px; height: 22px; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 0 0 6px rgba(255,255,255,0.18), 0 0 22px rgba(255,255,255,0.7); }
+.pino-linha { position: absolute; left: -1.5px; bottom: 0; width: 3px; background: linear-gradient(to top, rgba(255,255,255,0.95), rgba(255,255,255,0.4)); transform-origin: bottom; }
+.pino-caixa { position: absolute; left: -2px; top: 0; padding: 12px 22px 14px 18px; background: linear-gradient(160deg, rgba(14,18,64,0.94), rgba(5,7,30,0.94)); border-left: 7px solid #fff; border-radius: 4px 14px 14px 4px; white-space: nowrap; box-shadow: 0 14px 40px rgba(0,0,10,0.5); }
+.pino-t { font-family: 'AG', Inter, sans-serif; font-size: 30px; letter-spacing: 1px; }
+.pino-s { font-size: 21px; font-weight: 500; color: #c9d1ff; margin-top: 4px; }
+
+/* ---- HUD ---- */
+.hud-bug { position: absolute; left: 64px; top: 52px; display: flex; align-items: center; gap: 16px; }
+.hud-bug img { width: 74px; height: auto; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5)); }
+.hud-bug .t1 { font-family: 'AG', Inter, sans-serif; font-size: 25px; letter-spacing: 2px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+.hud-bug .t2 { font-size: 16px; font-weight: 600; letter-spacing: 3.5px; color: #dfe4ff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+.hud-sec { position: absolute; right: 64px; top: 46px; text-align: right; }
+.hud-sec .n { font-family: 'AG', Inter, sans-serif; font-size: 54px; line-height: 1; text-shadow: 0 3px 14px rgba(0,0,0,0.7); }
+.hud-sec .n small { font-size: 26px; color: #c9d1ff; }
+.hud-sec .nome { font-family: 'AG', Inter, sans-serif; font-size: 22px; letter-spacing: 4px; margin-top: 6px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+.hud-sec .trilho { width: 260px; height: 5px; margin: 10px 0 0 auto; border-radius: 3px; background: rgba(255,255,255,0.22); overflow: hidden; }
+.hud-sec .trilho div { height: 100%; background: linear-gradient(90deg, #7b3fe0, #3d6ff0, #27b3d6, #2fc27a, #9bd23a, #f2d33a, #f5a12e, #f26b2a, #e5342e, #d6247e); transform-origin: left; }
+.relogio { position: absolute; right: 70px; bottom: 60px; width: 170px; height: 170px; }
+.relogio svg { position: absolute; inset: 0; }
+.relogio .hora { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: Inter, sans-serif; font-weight: 700; font-size: 44px; letter-spacing: -1px; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.85), 0 0 2px #000; }
+.relogio .rot { position: absolute; left: 0; right: 0; bottom: -34px; text-align: center; font-size: 17px; font-weight: 700; letter-spacing: 3px; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.9); }
+.mapa { position: absolute; left: 60px; bottom: 54px; width: 300px; height: 236px; border-radius: 16px; background: rgba(6,8,34,0.78); border: 1.5px solid rgba(255,255,255,0.18); box-shadow: 0 18px 40px rgba(0,0,10,0.45); padding: 12px 14px; }
+.mapa .mt { font-size: 15px; font-weight: 700; letter-spacing: 3px; color: #c9d1ff; margin-bottom: 6px; }
+
+/* ---- transições ---- */
+.tr-faixas { position: absolute; left: -30%; top: -30%; width: 160%; height: 160%; transform: rotate(-18deg); display: flex; flex-direction: column; }
+.tr-faixa { flex: 1; }
+.tr-flash { position: absolute; inset: 0; background: radial-gradient(ellipse at center, #ffffff 0%, #eef0ff 50%, #c9d1ff 100%); }
+.tr-anel { position: absolute; left: 50%; top: 50%; border-radius: 50%; }
+.tr-v { position: absolute; left: 50%; top: 50%; width: 0; height: 0; }
