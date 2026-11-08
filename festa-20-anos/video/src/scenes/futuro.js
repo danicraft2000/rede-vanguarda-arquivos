@@ -17,6 +17,7 @@ async function futuro({ THREE, kit, raiz }) {
   const mesa = new THREE.Mesh(new THREE.BoxGeometry(2.4, 0.06, 0.9), kit.m.brilho(0xf4f6fb, 90)); mesa.position.y = 0.76; pc.add(mesa);
   const pe = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.76, 0.7), kit.m.cromo()); pe.position.set(-1.0, 0.38, 0); pc.add(pe); const pe2 = pe.clone(); pe2.position.x = 1.0; pc.add(pe2);
   const telaPC = kit.canvasTex(1024, 432, (g, w, hh) => { const gr = g.createLinearGradient(0, 0, w, hh); gr.addColorStop(0, '#0b1a5a'); gr.addColorStop(1, '#4a1a8a'); g.fillStyle = gr; g.fillRect(0, 0, w, hh); for (let i = 0; i < 6; i++) { g.fillStyle = `rgba(255,255,255,${0.08 + i * 0.02})`; g.fillRect(40 + i * 160, 60, 130, 300); } g.fillStyle = '#fff'; g.font = '700 54px AG'; g.fillText('EDIÇÃO 8K · IA', 50, 400); ARCO.forEach((c, i) => { g.fillStyle = c; g.fillRect(40 + i * 94, 20, 90, 10); }); });
+  telaPC.wrapS = THREE.RepeatWrapping; telaPC.repeat.x = -1; telaPC.needsUpdate = true; // vista pelo lado côncavo: desespelha o texto
   const curva = new THREE.Mesh(new THREE.CylinderGeometry(2.2, 2.2, 0.62, 48, 1, true, -0.45, 0.9), kit.m.texB(telaPC, { side: 2 }));
   curva.rotation.y = Math.PI; curva.position.set(0, 1.3, 2.0); pc.add(curva);
   const holo = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.5), new THREE.MeshBasicMaterial({ color: 0x27d3ff, transparent: true, opacity: 0.25, blending: THREE.AdditiveBlending, side: 2 }));
@@ -68,7 +69,7 @@ async function futuro({ THREE, kit, raiz }) {
       const ang = lerp(-0.25, 0.25, p);
       cam.position.set(Math.sin(ang) * 8.6, lerp(2.4, 2.7, p), Math.cos(ang) * 8.6);
       cam.lookAt(0, 1.75, -0.6);
-      cam.setViewOffset(1920, 1080, 0, -70, 1920, 1080);
+      cam.setViewOffset(1920, 1080, 0, -150, 1920, 1080);
       ia.rotation.y = S.t * 0.5; ia.rotation.x = Math.sin(S.t * 0.4) * 0.2;
       aneis.forEach((a, i) => (a.rotation.z = S.t * (0.6 + i * 0.3)));
       brilho.scale.setScalar(1 + 0.15 * S.pulso);
