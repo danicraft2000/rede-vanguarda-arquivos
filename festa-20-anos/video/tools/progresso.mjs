@@ -4,11 +4,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 const [pasta, total, flag, intervalo] = process.argv.slice(2);
 const TOTAL = +total;
+// tempo de parede desde o início do render (criação da pasta de progresso)
+const inicio = (() => { try { const st = fs.statSync(pasta); return st.birthtimeMs || st.ctimeMs; } catch { return Date.now(); } })();
 function ler() {
-  let feitos = 0, seg = 0, fim = 0, n = 0;
+  let feitos = 0, seg = (Date.now() - inicio) / 1000, fim = 0, n = 0;
   for (const f of fs.existsSync(pasta) ? fs.readdirSync(pasta) : []) {
     if (!f.endsWith('.json')) continue;
-    try { const j = JSON.parse(fs.readFileSync(path.join(pasta, f))); feitos += j.feitos; seg = Math.max(seg, j.seg); fim += j.fim ? 1 : 0; n++; } catch {}
+    try { const j = JSON.parse(fs.readFileSync(path.join(pasta, f))); feitos += j.feitos; fim += j.fim ? 1 : 0; n++; } catch {}
   }
   return { feitos, seg, fim, n };
 }
