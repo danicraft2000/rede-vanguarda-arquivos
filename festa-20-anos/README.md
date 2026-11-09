@@ -11,12 +11,17 @@ R. Jaguaré Mirim, 164 · Vila Leopoldina · São Paulo – SP · 05311-020 — 
 - Títulos na **ITC Avant Garde Gothic Bold** com o **V** e o **A** alternativos do logotipo Vanguarda
   (`U+E04F` = V, `U+E000` = A).
 
+## O vídeo
+
+**[`Daniel-20-Anos-Projeto-da-Festa-Vanguarda.mp4`](Daniel-20-Anos-Projeto-da-Festa-Vanguarda.mp4)** — 1920×1080, 30 qps, 5min00s, H.264 + AAC
+(cópia de ~90 MB para caber no limite do GitHub; o master tem 151 MB e é gerado por `video/tools/finalizar.sh`).
+
 ## Pastas
 
 | Pasta | O que tem |
 |---|---|
-| `vanguarda-especial/` | Os 15 quadros SVG da exposição **Vanguarda Especial** (sala de estar). |
-| `teloes/` | Os 3 telões do palco em SVG: esquerda **DANIEL**, centro **arco-íris**, direita **20 ANOS** (atualizado de 18 para 20 anos). |
+| `vanguarda-especial/` | Os 15 quadros SVG da exposição **Vanguarda Especial** (sala de estar), também em PNG em `vanguarda-especial/png/`. |
+| `teloes/` | Os 3 telões do palco em SVG (e PNG 1920×1080 em `teloes/png/`): esquerda **DANIEL**, centro **arco-íris**, direita **20 ANOS** (atualizado de 18 para 20 anos). |
 | `video/` | Projeto do vídeo (cenas 3D/2D, renderizador e montagem final). |
 | `tools/` | Geradores dos SVGs e dos contornos de texto 3D (Python). |
 
