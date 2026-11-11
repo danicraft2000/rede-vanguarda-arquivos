@@ -55,11 +55,11 @@ export async function build(ctx) {
     // 0 a 4 s: voo pelo tunel
     const f = E.easeInOut(E.seg(t, 0, 4.0), 2);
     const z = E.lerp(14, -25 * 6 + 10, f);
-    tunnel.visible = t < 4.2;
+    tunnel.visible = t < 4.0;
     camera.position.set(Math.sin(t * 0.8) * 0.6, Math.cos(t * 0.6) * 0.4, z); camera.lookAt(Math.sin(t * 0.8) * 0.3, 0, z - 20);
     camera.rotation.z += Math.sin(t * 0.5) * 0.08;
     tiles.forEach((g, i) => { g.rotation.y = -Math.cos(i * 0.95) * 0.35 + Math.sin(t * 1.5 + i) * 0.1; });
-    streaks.forEach((s) => { const u = s.userData; s.position.set(u.x, u.y, camera.position.z - 10 + ((u.z0 + t * 60) % 160 + 160) % 160 * -1 + 40); s.visible = t < 4.2; });
+    streaks.forEach((s) => { const u = s.userData; s.position.set(u.x, u.y, camera.position.z - 10 + ((u.z0 + t * 60) % 160 + 160) % 160 * -1 + 40); s.visible = t < 4.0; });
     // 4.2 s em diante: titulo
     title.visible = t >= 4.0;
     if (t >= 4.0) {
