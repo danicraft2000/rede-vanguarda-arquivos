@@ -53,7 +53,7 @@ export async function build(ctx) {
   // aneis de vidro colorido girando atras
   const rings = [];
   ['#ff3048', '#ffc21a', '#1aa8ff'].forEach((c, i) => {
-    const r = new THREE.Mesh(new THREE.TorusGeometry(3.0 + i * 0.32, 0.06, 24, 160), E.M.plastic(c, { roughness: 0.1, transmission: 0.3, emissive: new THREE.Color(c), emissiveIntensity: 0.25 }));
+    const r = new THREE.Mesh(new THREE.TorusGeometry(3.0 + i * 0.32, 0.06, 24, 160), E.M.plastic(c, { roughness: 0.1, emissive: new THREE.Color(c), emissiveIntensity: 0.25 }));
     r.position.set(-2.2, 0, -0.6); r.castShadow = true; root.add(r); rings.push(r);
   });
 
