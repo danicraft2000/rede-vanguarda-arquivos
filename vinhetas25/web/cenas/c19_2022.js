@@ -42,7 +42,7 @@ export async function build(ctx) {
   const camera = new THREE.PerspectiveCamera(30, ctx.aspect, 0.1, 200);
   function update(t) {
     pieces.forEach((m, i) => { const d = 0.15 + i * 0.22; const e = E.easeOutBack(E.seg(t, d, d + 0.9), 1.3); const f = m.userData.from;
-      m.position.set(f[0] * (1 - e), f[1] * (1 - e), f[2] * (1 - e)); m.rotation.z = (1 - E.easeOut(E.seg(t, d, d + 0.9))) * (i % 2 ? 0.8 : -0.8); });
+      m.position.set(f[0] * (1 - e), f[1] * (1 - e), (1 - E.easeOut(E.seg(t, d, d + 0.9))) * (i + 1) * 0.9); m.rotation.z = (1 - E.easeOut(E.seg(t, d, d + 0.9))) * (i % 2 ? 0.8 : -0.8); });
     const sw = E.easeInOut(E.seg(t, 1.6, 3.6), 3);
     root.rotation.set(Math.sin(sw * Math.PI) * 0.25, Math.sin(sw * Math.PI) * -0.45 + Math.sin(t * 0.4) * 0.03, 0);
     camera.position.set(0, 0, E.lerp(17, 15.5, E.easeOut(E.seg(t, 0, 5)))); camera.lookAt(0, 0, 0);
