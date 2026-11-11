@@ -18,7 +18,7 @@ export async function build(ctx) {
   const R = 2.05;
   const sphere = new THREE.Mesh(new THREE.SphereGeometry(R, 96, 64), new THREE.MeshPhysicalMaterial({ color: 0xa8bcf0, roughness: 0.2, metalness: 0.3, clearcoat: 1, clearcoatRoughness: 0.03, transparent: true, opacity: 0.72, depthWrite: false, iridescence: 0.5, iridescenceIOR: 1.4 }));
   sphere.renderOrder = 2;
-  const core = new THREE.Mesh(new THREE.SphereGeometry(R * 0.985, 64, 48), new THREE.MeshBasicMaterial({ color: 0x1c2a66 })); root.add(core);
+  const core = new THREE.Mesh(new THREE.SphereGeometry(R * 0.985, 64, 48), new THREE.MeshBasicMaterial({ color: 0x1c2a66 })); sphere.add(core);
   root.add(sphere);
   // letras cromadas azuladas, atravessando a esfera
   const txt = E.makeText(E.logo('VAN\nGUAR\nDA'), { size: 1.3, depth: 0.45, bevel: 0.03, bevelSeg: 3, align: 'center', lineHeight: 0.86,
