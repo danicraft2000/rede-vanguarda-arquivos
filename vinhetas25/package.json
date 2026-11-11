@@ -1,0 +1,17 @@
+{
+  "name": "vinhetas25",
+  "version": "1.0.0",
+  "description": "Especial 25 anos: vinhetas de aniversario da Rede Vanguarda em 3D (three.js + ffmpeg)",
+  "scripts": {
+    "render": "node render.js",
+    "trilha": "python3 trilha.py",
+    "montar": "python3 montar.py"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "private": true
+}
