@@ -12,7 +12,10 @@ de edição nem de placa de vídeo.
 
 ## O vídeo
 
-1920x1080, 30 qps, cerca de 3 min 30 s:
+O vídeo pronto está em **[`video/Rede_Vanguarda_25_Anos_Vinhetas.mp4`](video/Rede_Vanguarda_25_Anos_Vinhetas.mp4)**:
+1920x1080, 30 qps, H.264 + AAC, 3 min 29 s, 95 MB, áudio normalizado em -14 LUFS.
+
+Roteiro:
 
 | # | Ano | Vinheta | Observação |
 |---|-----|---------|------------|
